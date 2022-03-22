@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: react-k8s-test
+  labels:
+    app: react-k8s-test
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: react-k8s-test
+  template:
+    metadata:
+    labels:
+      app: react-k8s-test
+  spec:
+    containers:
+      - name: react-k8s-test
+        image: moisegui/react-k8s-test:1.0
+        ports:
+          - containerPort: 3000
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "200m"
