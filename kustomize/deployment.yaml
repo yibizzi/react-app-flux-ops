@@ -5,7 +5,7 @@ metadata:
   labels:
     app: react-k8s-test
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: react-k8s-test
@@ -19,7 +19,3 @@ spec:
           image: moisegui/react-k8s-test:1.0
           ports:
             - containerPort: 3000
-          resources:
-            limits:
-              memory: "512Mi"
-              cpu: "500m"
